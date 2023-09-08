@@ -15,10 +15,10 @@ class App extends Component {
       ]
     }
   }
-  
+
   handleAllChecked = (event) => {
     let fruites = this.state.fruites
-    fruites.forEach(fruite => fruite.isChecked = event.target.checked) 
+    fruites.forEach(fruite => fruite.isChecked = event.target.checked)
     this.setState({fruites: fruites})
   }
 
@@ -36,11 +36,14 @@ class App extends Component {
     return (
       <div className="App">
       <h1> Check and Uncheck All Example </h1>
-      <input type="checkbox" onChange={this.handleAllChecked}  value="checkedall" /> Check / Uncheck All
+      <input type="checkbox" onChange={this.handleAllChecked}
+             value="checkedall" /> Check / Uncheck All
         <ul>
         {
           this.state.fruites.map((fruite, index) => {
-            return (<CheckBox key={index} handleCheckChieldElement={this.handleCheckChieldElement}  {...fruite} />)
+            return (<CheckBox key={index}
+                              handleCheckChieldElement={this.handleCheckChieldElement}
+                              {...fruite} />)
           })
         }
         </ul>
